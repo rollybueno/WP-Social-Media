@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       htttps://google.com
+ * @link       http://www.rollybueno.com/wp-social-media
  * @since      1.0.0
  *
  * @package    WP_Social_Media
@@ -74,7 +74,7 @@ class WP_Social_Media_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/yo-di-po-ta-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, wp_social_media_path_plugin_url . 'assets/css/wp-social-media-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -97,7 +97,7 @@ class WP_Social_Media_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/script/yo-di-po-ta-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, wp_social_media_path_plugin_url . 'assets/script/wp-social-media-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -113,7 +113,7 @@ class WP_Social_Media_Admin {
 			'manage_options',
 			'wp-social-media',
 			array( $this, 'display_admin_page' ),
-			'dashicons-products',
+			'dashicons-share',
 		);
 	}
 
@@ -133,12 +133,13 @@ class WP_Social_Media_Admin {
                 <nav class="nav-tab-wrapper">
 					<a href="admin.php?page=wp-social-media&tab=instagram" class="nav-tab <?php echo ( 'instagram' === $tab ) ? 'nav-tab-active' : ''; ?>"><?php _e( 'Instagram', 'wp-social-media' ); ?></a>
 				</nav>
+
 				<div class="tab-content">
 					<?php
 					switch ( $tab ) :
                         default:
 						case 'instagram':
-							echo 'Settings'; // Put your HTML here
+							include_once( wp_social_media_path . '/includes/settings/instagram.php' );
 							break;
 					endswitch;
 					?>

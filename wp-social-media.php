@@ -18,7 +18,8 @@
 
 DEFINE( 'wp_social_media_version', '1.0.0' );
 DEFINE( 'wp_social_media_path', plugin_dir_path( __FILE__ ) );
-DEFINE( 'wp_social_media_path_plugin_url', get_option( 'siteurl' ) . '/wp-content/plugins/wp-social-media/' );
+DEFINE( 'wp_social_media_path_plugin_url', get_option( 'siteurl' ) . '/wp-content/plugins/WP-Social-Media/' );
+DEFINE( 'wp_social_media_app_redirect', 'https://apps.rollybueno.com/instagram/auth/' );
 
 /**
  * The code that runs during plugin activation.
