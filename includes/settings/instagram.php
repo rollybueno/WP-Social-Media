@@ -21,7 +21,7 @@
     <h2><?php _e( 'Account Authorisation' ); ?></h2>
     <p class="description"><?php _e( 'To start using WP Social Media, kindly allow and authorise the app on Instagram to access your account. Clicking the button below will redirect you to Instagram site which you need to authorise WP Social Media accessing your images and video.' ); ?></p>
     <div class="insta-default">
-        <a href="<?php echo wp_social_media_app_redirect; ?>?redirect_uri=<?php echo $redirect_uri; ?>" class="insta-default">Log in with Instagram <i class="dashicons dashicons-instagram"></i></a>
+        <a href="<?php echo wp_social_media_app_redirect; ?>?redirect_url=<?php echo base64_encode( $redirect_uri ); ?>" class="insta-default">Log in with Instagram <i class="dashicons dashicons-instagram"></i></a>
     </div>
     <?php
     /**
