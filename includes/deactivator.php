@@ -30,7 +30,14 @@ class WP_Social_Media_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+		$options = array(
+			'wp-social-media-ig-token',
+			'wp-social-media-ig-token-expires',
+			'wp-social-media-ig-user-id'
+		);
+		foreach( $options as $option ) {
+			delete_option( $option );
+		}
 	}
 
 }
